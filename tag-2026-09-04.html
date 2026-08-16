@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>4. September 2026 — Morgenandacht</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Source+Sans+3:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --blue-deep: #7A4A35;
+    --blue-mid: #96624A;
+    --blue-grey: #BFA088;
+    --gold: #D4953C;
+    --terracotta: #C26B3C;
+    --cream: #FFF3E5;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Source Sans 3', sans-serif;
+    background: var(--cream);
+    color: var(--blue-deep);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition: none !important; }
+  }
+  .sky {
+    position: relative;
+    height: 38vh;
+    min-height: 280px;
+    overflow: hidden;
+    background: linear-gradient(180deg, var(--blue-deep) 0%, var(--blue-mid) 45%, var(--gold) 100%);
+  }
+  .sun {
+    position: absolute;
+    left: 50%;
+    bottom: -10%;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #FFF3D6 0%, var(--gold) 60%, var(--terracotta) 100%);
+    transform: translate(-50%, 20px);
+    opacity: 0;
+    animation: rise 1.4s ease-out 0.2s forwards;
+    box-shadow: 0 0 60px 10px rgba(244, 169, 60, 0.45);
+  }
+  @keyframes rise {
+    from { transform: translate(-50%, 60px); opacity: 0; }
+    to   { transform: translate(-50%, 20px); opacity: 1; }
+  }
+  .horizon {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 1px;
+    background: rgba(255, 248, 236, 0.25);
+  }
+  .header-content {
+    position: absolute;
+    bottom: 28px;
+    left: 0; right: 0;
+    text-align: center;
+    z-index: 2;
+  }
+  .weekday {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--cream);
+    opacity: 0.85;
+  }
+  .date {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: clamp(2.2rem, 9vw, 3.4rem);
+    color: var(--cream);
+    margin-top: 0.15rem;
+    letter-spacing: -0.01em;
+  }
+  .series {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--blue-deep);
+    background: var(--cream);
+    display: inline-block;
+    padding: 0.3rem 0.8rem;
+    border-radius: 999px;
+    margin-top: 0.6rem;
+    letter-spacing: 0.06em;
+  }
+  main {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 2rem 1.25rem 4rem;
+  }
+  .nav-bar {
+    display: flex;
+    justify-content: space-between;
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 1rem 1.25rem 0;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem;
+  }
+  .nav-bar a {
+    color: var(--blue-mid);
+    text-decoration: none;
+    padding: 0.4rem 0.7rem;
+    border: 1px solid #E3DDD0;
+    border-radius: 8px;
+  }
+  .nav-bar a:hover { background: #fff; }
+  .nav-bar .disabled { color: #C9C2B2; border-color: #EDE8DC; pointer-events: none; }
+  .devotion-card {
+    background: #fff;
+    border-radius: 18px;
+    padding: 1.8rem 1.6rem;
+    box-shadow: 0 8px 30px -10px rgba(27, 42, 74, 0.18);
+    border-left: 4px solid var(--gold);
+  }
+  .question {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 1.25rem;
+    color: var(--blue-deep);
+    margin-bottom: 0.7rem;
+    line-height: 1.35;
+  }
+  .devotion-text {
+    font-size: 1.02rem;
+    color: #2A2A2A;
+  }
+  .section-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--blue-grey);
+    margin: 2.6rem 0 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+  .section-label::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: #E3DDD0;
+  }
+  .verse-card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 1.3rem 1.4rem;
+    margin-bottom: 0.9rem;
+    box-shadow: 0 4px 16px -8px rgba(27, 42, 74, 0.12);
+  }
+  .verse-ref {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.74rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: #fff;
+    background: var(--terracotta);
+    padding: 0.25rem 0.7rem;
+    border-radius: 6px;
+    margin-bottom: 0.65rem;
+  }
+  .verse-text {
+    font-size: 0.98rem;
+    color: #2A2A2A;
+  }
+  .verse-text sup {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.68rem;
+    color: var(--blue-grey);
+    margin-right: 0.15rem;
+  }
+  footer {
+    text-align: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--blue-grey);
+    padding-bottom: 1.5rem;
+  }
+</style>
+</head>
+<body>
+
+<div class="sky">
+  <div class="sun"></div>
+  <div class="horizon"></div>
+  <div class="header-content">
+    <div class="weekday">Freitag</div>
+    <div class="date">4. September 2026</div>
+    <div class="series">Gott, der Sohn (06/36)</div>
+  </div>
+</div>
+
+<nav class="nav-bar">
+  <a href="tag-2026-09-03.html">← Vorheriger Tag</a>
+  <a href="index.html">Übersicht</a>
+  <a href="tag-2026-09-05.html">Nächster Tag →</a>
+</nav>
+
+<main>
+  <div class="devotion-card">
+    
+    <div class="devotion-text">Unser Glaube gründet sich auf einen einzigen Glauben und einen einzigen Weg zur Erlösung. Wir sind hier, um durch eine in uns versiegelte geistliche Natur zu führen, und dies soll unser Hauptaugenmerk sein, damit wir eine Quelle des Dienens und des Lichts sind – ein Ort des Himmels auf Erden. Schaut auf die Seele und nicht auf das äußere Wesen!</div>
+  </div>
+
+  <div class="section-label">Bibelstellen</div>
+
+  <div class="verse-card">
+    <span class="verse-ref">Kolosser 2:19</span>
+    <div class="verse-text">und hält sich nicht an dem Haupt, aus welchem der ganze Leib durch Gelenke und Fugen Handreichung empfängt und zusammengehalten wird und also wächst zur göttlichen Größe.</div>
+  </div>
+  
+
+  <footer>Hausunterrichtskalender · Die Altapostolische Kirche (Europa) · Luther 1912</footer>
+</main>
+
+</body>
+</html>
