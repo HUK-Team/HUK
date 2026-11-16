@@ -1,1 +1,263 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lehrthema 2026/27</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500,600&family=Source+Sans+3:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --blue-deep: #1B2A4A;
+    --blue-mid: #2D4373;
+    --blue-grey: #7C8FA8;
+    --gold: #F4A93C;
+    --terracotta: #D9622B;
+    --cream: #FFF8EC;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Source Sans 3', sans-serif;
+    background: var(--cream);
+    color: var(--blue-deep);
+  }
+  .sky {
+    height: 22vh;
+    min-height: 160px;
+    background: linear-gradient(180deg, var(--blue-deep) 0%, var(--blue-mid) 45%, var(--gold) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1rem;
+  }
+  h1 {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: clamp(1.5rem, 6vw, 2.2rem);
+    color: var(--cream);
+  }
+  .subtitle {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    color: var(--cream);
+    opacity: 0.85;
+    margin-top: 0.4rem;
+  }
+  main {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 1.5rem 1.25rem 4rem;
+  }
+  
+  .topbar {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--blue-deep);
+    padding: 0.4rem 0.9rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem;
+    border-bottom: 1px solid rgba(255, 248, 236, 0.18);
+  }
+  .topbar a {
+    color: var(--cream);
+    text-decoration: none;
+    padding: 0.6rem 0.85rem;
+    border: 1px solid rgba(255, 248, 236, 0.4);
+    border-radius: 8px;
+    line-height: 1.2;
+  }
+  .topbar a.primary { background: var(--gold); border-color: var(--gold); color: var(--blue-deep); font-weight: 500; }
+  .topbar a:hover { background: rgba(255, 248, 236, 0.14); }
+  .topbar a.primary:hover { background: #fff; }
 
+  .topbar .right { display: flex; gap: 0.5rem; }
+  .topbar button {
+    font: inherit; color: var(--cream); background: transparent; cursor: pointer;
+    padding: 0.6rem 0.85rem; border: 1px solid rgba(255, 248, 236, 0.4); border-radius: 8px; line-height: 1.2;
+  }
+  .topbar button:hover { background: rgba(255, 248, 236, 0.14); }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  .jump {
+    max-width: 680px; margin: 0 auto; padding: 1rem 1.25rem 0;
+    display: flex; flex-wrap: wrap; gap: 0.5rem;
+    font-family: 'JetBrains Mono', monospace; font-size: 0.78rem;
+  }
+  .jump a {
+    color: var(--blue-deep); text-decoration: none; background: #fff; padding: 0.5rem 0.85rem;
+    border-radius: 999px; border: 1px solid #E3DDD0;
+  }
+  .jump a:hover { background: #FFF3E0; }
+  main { max-width: 680px; margin: 0 auto; padding: 0.5rem 1.25rem 4rem; }
+  section { scroll-margin-top: 4.5rem; }
+  .section-label {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--blue-grey); margin: 2.6rem 0 1rem; display: flex; align-items: center; gap: 0.6rem;
+  }
+  .section-label::after { content: ""; flex: 1; height: 1px; background: #E3DDD0; }
+  .card {
+    background: #fff; border-radius: 18px; padding: 1.6rem 1.5rem;
+    box-shadow: 0 8px 30px -10px rgba(27, 42, 74, 0.18); border-left: 4px solid var(--gold);
+  }
+  .card p { font-size: 1.125rem; line-height: 1.7; color: #2A2A2A; }
+  .card p + p { margin-top: 1rem; }
+  .satz { scroll-margin-top: 5rem; border-radius: 4px; }
+  .satz:target { background: rgba(244, 169, 60, 0.35); box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+  sup.sn {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; color: var(--terracotta); margin-right: 0.2rem; font-weight: 500;
+  }
+  .thema {
+    background: var(--blue-deep); color: var(--cream); border-radius: 18px; padding: 1.8rem 1.6rem;
+    font-family: 'Fraunces', serif; font-weight: 500; font-size: 1.3rem; line-height: 1.5;
+    border-left: 4px solid var(--gold);
+  }
+  .verse-card {
+    background: #fff; border-radius: 14px; padding: 1.3rem 1.4rem; box-shadow: 0 4px 16px -8px rgba(27, 42, 74, 0.12);
+  }
+  .verse-ref {
+    display: inline-block; font-family: 'JetBrains Mono', monospace; font-size: 0.74rem; font-weight: 500; letter-spacing: 0.04em;
+    color: #fff; background: var(--terracotta); padding: 0.25rem 0.7rem; border-radius: 6px;
+  }
+  .verse-card details { margin-top: 0.9rem; }
+  .verse-card summary {
+    cursor: pointer; font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; color: var(--blue-mid);
+    padding: 0.6rem 0; min-height: 44px; display: flex; align-items: center;
+  }
+  .verse-text { font-size: 1.05rem; line-height: 1.7; color: #2A2A2A; margin-top: 0.4rem; }
+  .verse-text sup { font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; color: var(--blue-grey); margin-right: 0.15rem; }
+  .stem { font-family: 'Fraunces', serif; font-weight: 500; font-size: 1.2rem; line-height: 1.45; margin-bottom: 1rem; }
+  ol.ziele { list-style: none; display: grid; gap: 0.75rem; }
+  .ziel {
+    display: flex; gap: 1rem; background: #fff; border-radius: 14px; padding: 1.1rem 1.2rem;
+    box-shadow: 0 4px 16px -8px rgba(27, 42, 74, 0.12); scroll-margin-top: 5rem;
+  }
+  .ziel:target { outline: 3px solid var(--gold); }
+  .badge {
+    flex: none; width: 2.3rem; height: 2.3rem; border-radius: 50%; background: var(--terracotta); color: #fff;
+    display: flex; align-items: center; justify-content: center; font-family: 'Fraunces', serif; font-weight: 600; font-size: 1.1rem;
+  }
+  .ziel-body p { font-size: 1.1rem; line-height: 1.6; color: #2A2A2A; margin-bottom: 0.55rem; }
+  footer {
+    text-align: center; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: var(--blue-grey); padding: 2.5rem 1rem 1.5rem;
+  }
+</style>
+</head>
+<body>
+<div class="topbar">
+  <a href="../index.html">← HUK</a>
+  <span class="right">
+    <a class="primary" href="Jahresflyer.pdf" download="Lehrthema-2026-27.pdf">PDF herunterladen</a>
+    <button type="button" id="share">Teilen</button>
+  </span>
+</div>
+
+<div class="sky">
+  <div>
+    <h1>Lehrthema 2026/27</h1>
+    <div class="subtitle">LEHRHINTERGRUND · THEMA · TEXT · ZIELE</div>
+  </div>
+</div>
+
+<nav class="jump" aria-label="Abschnitte">
+  <a href="#hintergrund">Hintergrund</a>
+  <a href="#thema">Thema</a>
+  <a href="#text">Text</a>
+  <a href="#lehrziele">Lehrziele</a>
+</nav>
+
+<main>
+  <section id="hintergrund">
+    <div class="section-label">Hintergrund</div>
+    <div class="card">
+      <p><span class="satz" id="satz-1"><sup class="sn">1</sup>Als Glieder am Leib Christi und Verteidiger des Glaubens ist es unerlässlich, dass als Kinder Gottes unsere Herzen in herausfordernden Zeiten getröstet werden.</span> <span class="satz" id="satz-2"><sup class="sn">2</sup>Wir müssen uns daran erinnern, dass die Gnade und der Frieden Gottes, des Vaters, in unserem Herrn Jesus Christus stets mit uns sind.</span></p>
+      <p><span class="satz" id="satz-3"><sup class="sn">3</sup>Da wir in Jesus Christus vollkommen sind, nehmen wir durch das Wirken des Heiligen Geistes sein Ebenbild und seine Identität an und entfernen alles, was mit ihm konkurriert.</span> <span class="satz" id="satz-4"><sup class="sn">4</sup>In seiner Identität wachsen wir geistlich, werden im Glauben gestärkt und sind stets bereit, selbst unüberwindbare Herausforderungen zu bewältigen.</span> <span class="satz" id="satz-5"><sup class="sn">5</sup>Auch wenn Täuschung, Finsternis und weltliche Philosophien fortbestehen, werden für uns Gelegenheiten geschaffen, unseren Glauben an den allmächtigen Gott und unsere Gemeinschaft mit Jesus Christus, in dem alle Kinder Gottes jede Spaltung überwinden, zu bekennen.</span></p>
+      <p><span class="satz" id="satz-6"><sup class="sn">6</sup>Wir sind ermutigt, weiterhin als lebendige Zeugnisse zu leben und christusgleiche Liebe, geistliche Einheit und gottgefälligen Dienst zu zeigen, indem wir uns ständig selbst verleugnen, täglich unser Kreuz auf uns nehmen und Jesus nachfolgen.</span> <span class="satz" id="satz-7"><sup class="sn">7</sup>Christus gleich zu sein erfordert das Tragen des Kreuzes – der einzige Ort, an dem die Einheit mit Ihm besteht, der für uns die Weisheit, die Gerechtigkeit, die Heiligung und die Erlösung ist.</span></p>
+      <p><span class="satz" id="satz-8"><sup class="sn">8</sup>Als Apostolische sind wir dazu aufgefordert, weiterhin in Gemeinschaft mit Jesus Christus zu leben, den alten Menschen abzulegen, uns mit Gottes Liebe und Frieden zu bekleiden und uns in allem, was wir sagen und tun, von Seinem Heiligen Geist leiten zu lassen.</span></p>
+    </div>
+  </section>
+
+  <section id="thema">
+    <div class="section-label">Thema</div>
+    <div class="thema">Reifer geworden in der Fülle und Vorherrschaft Christi, ermächtigt uns der Geist der Wahrheit und vereint uns vollkommen in einem Sinne und in einerlei Meinung, wodurch unsere Einheit im Leib Christi definiert wird, der die Macht und Weisheit Gottes ist.</div>
+  </section>
+
+  <section id="text">
+    <div class="section-label">Text</div>
+    <div class="verse-card">
+      <span class="verse-ref">1. Korinther 1:1–31</span>
+      <details>
+        <summary>Bibeltext anzeigen (Luther 1912)</summary>
+        <div class="verse-text"><sup>1</sup>Paulus, berufen zum Apostel Jesu Christi durch den Willen Gottes, und Bruder Sosthenes <sup>2</sup>der Gemeinde zu Korinth, den Geheiligten in Christo Jesu, den berufenen Heiligen samt allen denen, die anrufen den Namen unsers HERRN Jesu Christi an allen ihren und unsern Orten: <sup>3</sup>Gnade sei mit euch und Friede von Gott, unserm Vater, und dem HERRN Jesus Christus! <sup>4</sup>Ich danke meinem Gott allezeit eurethalben für die Gnade Gottes, die euch gegeben ist in Christo Jesu, <sup>5</sup>daß ihr seid durch ihn an allen Stücken reich gemacht, an aller Lehre und in aller Erkenntnis; <sup>6</sup>wie denn die Predigt von Christus in euch kräftig geworden ist, <sup>7</sup>also daß ihr keinen Mangel habt an irgend einer Gabe und wartet nur auf die Offenbarung unsers HERRN Jesu Christi, <sup>8</sup>welcher auch wird euch fest erhalten bis ans Ende, daß ihr unsträflich seid auf den Tag unsers HERRN Jesu Christi. <sup>9</sup>Denn Gott ist treu, durch welchen ihr berufen seid zur Gemeinschaft seines Sohnes Jesu Christi, unsers HERRN. <sup>10</sup>Ich ermahne euch aber, liebe Brüder, durch den Namen unsers HERRN Jesu Christi, daß ihr allzumal einerlei Rede führt und lasset nicht Spaltungen unter euch sein, sondern haltet fest aneinander in einem Sinne und in einerlei Meinung. <sup>11</sup>Denn es ist vor mich gekommen, liebe Brüder, durch die aus Chloes Gesinde von euch, daß Zank unter euch sei. <sup>12</sup>Ich sage aber davon, daß unter euch einer spricht: Ich bin paulisch, der andere: Ich bin apollisch, der dritte: Ich bin kephisch, der vierte; Ich bin christisch. <sup>13</sup>Wie? Ist Christus nun zertrennt ? Ist denn Paulus für euch gekreuzigt ? Oder seid ihr auf des Paulus Namen getauft ? <sup>14</sup>Ich danke Gott, daß ich niemand unter euch getauft habe außer Krispus und Gajus, <sup>15</sup>daß nicht jemand sagen möge, ich hätte auf meinen Namen getauft. <sup>16</sup>Ich habe aber auch getauft des Stephanas Hausgesinde; weiter weiß ich nicht, ob ich etliche andere getauft habe. <sup>17</sup>Denn Christus hat mich nicht gesandt, zu taufen, sondern das Evangelium zu predigen, nicht mit klugen Worten, auf daß nicht das Kreuz Christi zunichte werde. <sup>18</sup>Denn das Wort vom Kreuz ist eine Torheit denen, die verloren werden; uns aber, die wir selig werden ist&#x27;s eine Gotteskraft. <sup>19</sup>Denn es steht geschrieben: &quot;Ich will zunichte machen die Weisheit der Weisen, und den Verstand der Verständigen will ich verwerfen.&quot; <sup>20</sup>Wo sind die Klugen? Wo sind die Schriftgelehrten? Wo sind die Weltweisen? Hat nicht Gott die Weisheit dieser Welt zur Torheit gemacht ? <sup>21</sup>Denn dieweil die Welt durch ihre Weisheit Gott in seiner Weisheit nicht erkannte, gefiel es Gott wohl, durch törichte Predigt selig zu machen die, so daran glauben. <sup>22</sup>Sintemal die Juden Zeichen fordern und die Griechen nach Weisheit fragen, <sup>23</sup>wir aber predigen den gekreuzigten Christus, den Juden ein Ärgernis und den Griechen eine Torheit; <sup>24</sup>denen aber, die berufen sind, Juden und Griechen, predigen wir Christum, göttliche Kraft und göttliche Weisheit. <sup>25</sup>Denn die göttliche Torheit ist weiser, als die Menschen sind; und die göttliche Schwachheit ist stärker, als die Menschen sind. <sup>26</sup>Sehet an, liebe Brüder, eure Berufung: nicht viel Weise nach dem Fleisch, nicht viel Gewaltige, nicht viel Edle sind berufen. <sup>27</sup>Sondern was töricht ist vor der Welt, das hat Gott erwählt, daß er die Weisen zu Schanden mache; und was schwach ist vor der Welt, das hat Gott erwählt, daß er zu Schanden mache, was stark ist; <sup>28</sup>und das Unedle vor der Welt und das Verachtete hat Gott erwählt, und das da nichts ist, daß er zunichte mache, was etwas ist, <sup>29</sup>auf daß sich vor ihm kein Fleisch rühme. <sup>30</sup>Von ihm kommt auch ihr her in Christo Jesu, welcher uns gemacht ist von Gott zur Weisheit und zur Gerechtigkeit und zur Heiligung und zur Erlösung, <sup>31</sup>auf daß (wie geschrieben steht ), &quot;wer sich rühmt, der rühme sich des HERRN!&quot;</div>
+      </details>
+    </div>
+  </section>
+
+  <section id="lehrziele">
+    <div class="section-label">Lehrziele</div>
+    <p class="stem">Durch unsere Einheit als demütige Diener im Leib Christi werden wir –</p>
+    <ol class="ziele">
+      <li class="ziel" id="ziel-a">
+        <span class="badge">A</span>
+        <div class="ziel-body"><p>als Heilige leben, berufen durch den Willen Gottes, geheiligt, vereint und versorgt, um durch die Gnade und den Frieden Gottes in Jesus Christus gesegnet zu sein</p><span class="verse-ref">Verse 1–3</span></div>
+      </li>
+      <li class="ziel" id="ziel-b">
+        <span class="badge">B</span>
+        <div class="ziel-body"><p>dankbar und ohne Tadel sein und an nichts Mangel leiden, da wir durch unsere Gemeinschaft mit Ihm bereichert werden</p><span class="verse-ref">Verse 4–9</span></div>
+      </li>
+      <li class="ziel" id="ziel-c">
+        <span class="badge">C</span>
+        <div class="ziel-body"><p>den Sinn Christi aus einem Munde verkünden, und jede Form der Spaltung ablehnen</p><span class="verse-ref">Verse 10–13</span></div>
+      </li>
+      <li class="ziel" id="ziel-d">
+        <span class="badge">D</span>
+        <div class="ziel-body"><p>das Evangelium von Jesus Christus als unseren Schwerpunkt predigen, um das Kreuz Wirklichkeit werden zu lassen</p><span class="verse-ref">Verse 14–17</span></div>
+      </li>
+      <li class="ziel" id="ziel-e">
+        <span class="badge">E</span>
+        <div class="ziel-body"><p>auf das Predigen des Kreuzes vertrauen, denn es ist die Kraft Gottes zur Errettung für die, die erlöst werden</p><span class="verse-ref">Verse 18–19</span></div>
+      </li>
+      <li class="ziel" id="ziel-f">
+        <span class="badge">F</span>
+        <div class="ziel-body"><p>Gottes Weg der Erlösung durch den gekreuzigten Christus, die Kraft und Weisheit Gottes, verkünden</p><span class="verse-ref">Verse 20–24</span></div>
+      </li>
+      <li class="ziel" id="ziel-g">
+        <span class="badge">G</span>
+        <div class="ziel-body"><p>die Weisheit Gottes annehmen, der bewusst die Demütigen erwählt, um die Weisen zuschanden zu machen, damit sich kein Fleisch vor ihm rühmen soll</p><span class="verse-ref">Verse 25–29</span></div>
+      </li>
+      <li class="ziel" id="ziel-h">
+        <span class="badge">H</span>
+        <div class="ziel-body"><p>Gott, den Vater, in seinem Sohn Jesus Christus verherrlichen, der für uns Weisheit, Gerechtigkeit, Heiligung und Erlösung durch unsere Vereinigung mit ihm ist</p><span class="verse-ref">Verse 30–31</span></div>
+      </li>
+    </ol>
+  </section>
+
+  <footer>Lehrhintergrund, Thema, Text und Ziele 2026/27 · Hausunterrichtskalender</footer>
+</main>
+
+<script>
+  document.getElementById('share').addEventListener('click', async function () {
+    var url = location.href.split('#')[0];
+    var btn = this;
+    if (navigator.share) {
+      try { await navigator.share({ title: 'Lehrthema 2026/27', text: 'Lehrhintergrund, Thema, Text und Ziele 2026/27', url: url }); } catch (e) {}
+      return;
+    }
+    try {
+      await navigator.clipboard.writeText(url);
+      btn.textContent = 'Link kopiert';
+      setTimeout(function () { btn.textContent = 'Teilen'; }, 2500);
+    } catch (e) {
+      window.prompt('Link kopieren:', url);
+    }
+  });
+</script>
+</body>
+</html>
