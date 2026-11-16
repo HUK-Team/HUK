@@ -76,129 +76,209 @@
     text-align: right;
     color: #2A2A2A;
   }
+
+  .topbar {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--blue-deep);
+    padding: 0.4rem 0.9rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem;
+    border-bottom: 1px solid rgba(255, 248, 236, 0.18);
+  }
+  .topbar a {
+    color: var(--cream);
+    text-decoration: none;
+    padding: 0.6rem 0.85rem;
+    border: 1px solid rgba(255, 248, 236, 0.4);
+    border-radius: 8px;
+    line-height: 1.2;
+  }
+  .topbar a.primary { background: var(--gold); border-color: var(--gold); color: var(--blue-deep); font-weight: 500; }
+  .topbar a:hover { background: rgba(255, 248, 236, 0.14); }
+  .topbar a.primary:hover { background: #fff; }
+  .devotion-text strong { font-weight: 600; color: var(--blue-deep); }
+  .refs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1.2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #E3DDD0;
+  }
+  .ref-chip {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem;
+    padding: 0.5rem 0.85rem;
+    border-radius: 999px;
+    border: 1px solid var(--blue-grey);
+    color: var(--blue-deep);
+    background: var(--cream);
+    text-decoration: none;
+    line-height: 1.2;
+  }
+  a.ref-chip { border-color: var(--terracotta); }
+  a.ref-chip:hover { background: #fff; }
 </style>
 </head>
 <body>
+<div class="topbar">
+  <a class="primary" href="jahresthema/index.html">Lehrthema 2026/27 →</a>
+  <a href="jahresthema/Jahresflyer.pdf">PDF</a>
+</div>
 <div class="sky">
   <div>
-    <h1>Gott, der Sohn</h1>
-    <div class="subtitle">HAUSUNTERRICHTSKALENDER · JUNI – JULI 2026</div>
+    <h1>Gott, der Heilige Geist</h1>
+    <div class="subtitle">HAUSUNTERRICHTSKALENDER · NOVEMBER – DEZEMBER 2026</div>
   </div>
 </div>
 <main>
-  <a class="row" href="tag-2026-10-19.html">
-    <span class="row-date">Mo 19. Oktober 2026</span>
-    <span class="row-title">Frage 18: Wer ist der Herr Jesus Christus, an den wir gemäß unserem Glaubensbekenntnis glauben?</span>
+  <a class="row" href="tag-2026-11-16.html">
+    <span class="row-date">Mo 16. November 2026</span>
+    <span class="row-title">Frage 19, Teil 2: Was offenbaren die Heiligen Schriften über Jesus Christus, den eingeborenen Sohn Gottes?</span>
   </a>
-  <a class="row" href="tag-2026-10-20.html">
-    <span class="row-date">Di 20. Oktober 2026</span>
+  <a class="row" href="tag-2026-11-17.html">
+    <span class="row-date">Di 17. November 2026</span>
     <span class="row-title">Andacht</span>
   </a>
-  <a class="row" href="tag-2026-10-21.html">
-    <span class="row-date">Mi 21. Oktober 2026</span>
+  <a class="row" href="tag-2026-11-18.html">
+    <span class="row-date">Mi 18. November 2026</span>
+    <span class="row-title">Der eingeborene Sohn Gottes wird in der Heiligen Schrift als die Offenbarung im Fleisch beschrieben.</span>
+  </a>
+  <a class="row" href="tag-2026-11-19.html">
+    <span class="row-date">Do 19. November 2026</span>
     <span class="row-title">Andacht</span>
   </a>
-  <a class="row" href="tag-2026-10-22.html">
-    <span class="row-date">Do 22. Oktober 2026</span>
+  <a class="row" href="tag-2026-11-20.html">
+    <span class="row-date">Fr 20. November 2026</span>
+    <span class="row-title">Frage 20: Was sagt die Heilige Schrift über Jesus Christus als den Herrn? Jesus</span>
+  </a>
+  <a class="row" href="tag-2026-11-21.html">
+    <span class="row-date">Sa 21. November 2026</span>
     <span class="row-title">Andacht</span>
   </a>
-  <a class="row" href="tag-2026-10-23.html">
-    <span class="row-date">Fr 23. Oktober 2026</span>
-    <span class="row-title">Der eingeborene Sohn</span>
-  </a>
-  <a class="row" href="tag-2026-10-24.html">
-    <span class="row-date">Sa 24. Oktober 2026</span>
-    <span class="row-title">Andacht</span>
-  </a>
-  <a class="row" href="tag-2026-10-25.html">
-    <span class="row-date">So 25. Oktober 2026</span>
+  <a class="row" href="tag-2026-11-22.html">
+    <span class="row-date">So 22. November 2026</span>
     <span class="row-title">4. Sonntag</span>
   </a>
-  <a class="row" href="tag-2026-10-26.html">
-    <span class="row-date">Mo 26. Oktober 2026</span>
-    <span class="row-title">Unsere geistliche Aufgabe für 2026</span>
-  </a>
-  <a class="row" href="tag-2026-10-27.html">
-    <span class="row-date">Di 27. Oktober 2026</span>
-    <span class="row-title">Kernaussage von Kol 2</span>
-  </a>
-  <a class="row" href="tag-2026-10-28.html">
-    <span class="row-date">Mi 28. Oktober 2026</span>
-    <span class="row-title">Vollkommenheit, Weisheit und Erkenntnis, die auf Christus gründen</span>
-  </a>
-  <a class="row" href="tag-2026-10-29.html">
-    <span class="row-date">Do 29. Oktober 2026</span>
-    <span class="row-title">Dankbarkeit und Beständigkeit</span>
-  </a>
-  <a class="row" href="tag-2026-10-30.html">
-    <span class="row-date">Fr 30. Oktober 2026</span>
-    <span class="row-title">Freiheit vom Gesetz und Verzicht auf Verurteilung</span>
-  </a>
-  <a class="row" href="tag-2026-10-31.html">
-    <span class="row-date">Sa 31. Oktober 2026</span>
+  <a class="row" href="tag-2026-11-23.html">
+    <span class="row-date">Mo 23. November 2026</span>
     <span class="row-title">Andacht</span>
   </a>
-  <a class="row" href="tag-2026-11-01.html">
-    <span class="row-date">So 1. November 2026</span>
+  <a class="row" href="tag-2026-11-24.html">
+    <span class="row-date">Di 24. November 2026</span>
+    <span class="row-title">Andacht</span>
+  </a>
+  <a class="row" href="tag-2026-11-25.html">
+    <span class="row-date">Mi 25. November 2026</span>
+    <span class="row-title">Andacht</span>
+  </a>
+  <a class="row" href="tag-2026-11-26.html">
+    <span class="row-date">Do 26. November 2026</span>
+    <span class="row-title">Der Gemeinde Gottes zu Korinth, den Geheiligten in Christo Jesu…</span>
+  </a>
+  <a class="row" href="tag-2026-11-27.html">
+    <span class="row-date">Fr 27. November 2026</span>
+    <span class="row-title">Gnade sei mit euch und Friede von Gott, unserem Vater, und vom Herrn Jesus Christus…</span>
+  </a>
+  <a class="row" href="tag-2026-11-28.html">
+    <span class="row-date">Sa 28. November 2026</span>
+    <span class="row-title">Da wir in Jesus Christus vollkommen sind, nehmen wir durch das Wirken des Heiligen Geistes sein Ebenbild und seine Identität an und entfernen alles, was mit ihm konkurriert.</span>
+  </a>
+  <a class="row" href="tag-2026-11-29.html">
+    <span class="row-date">So 29. November 2026</span>
+    <span class="row-title">5. Sonntag</span>
+  </a>
+  <a class="row" href="tag-2026-11-30.html">
+    <span class="row-date">Mo 30. November 2026</span>
+    <span class="row-title">Andacht</span>
+  </a>
+  <a class="row" href="tag-2026-12-01.html">
+    <span class="row-date">Di 1. Dezember 2026</span>
+    <span class="row-title">Andacht</span>
+  </a>
+  <a class="row" href="tag-2026-12-02.html">
+    <span class="row-date">Mi 2. Dezember 2026</span>
+    <span class="row-title">Durch unsere Einheit als demütige Diener im Leib Christi werden wir – als Heilige leben, berufen durch den Willen Gottes, geheiligt, vereint und versorgt, um durch die Gnade und den Frieden Gottes in Jesus Christus gesegnet zu sein.</span>
+  </a>
+  <a class="row" href="tag-2026-12-03.html">
+    <span class="row-date">Do 3. Dezember 2026</span>
+    <span class="row-title">Andacht</span>
+  </a>
+  <a class="row" href="tag-2026-12-04.html">
+    <span class="row-date">Fr 4. Dezember 2026</span>
+    <span class="row-title">Danksagung und Segnung der Ernte.</span>
+  </a>
+  <a class="row" href="tag-2026-12-05.html">
+    <span class="row-date">Sa 5. Dezember 2026</span>
+    <span class="row-title">Erntedank und Segnung der Ernte.</span>
+  </a>
+  <a class="row" href="tag-2026-12-06.html">
+    <span class="row-date">So 6. Dezember 2026</span>
     <span class="row-title">1. Sonntag</span>
   </a>
-  <a class="row" href="tag-2026-11-02.html">
-    <span class="row-date">Mo 2. November 2026</span>
-    <span class="row-title">„Dann sprach Gott: ‚Lasst uns Menschen machen, ein Bild, das uns gleich sei‘ …“</span>
+  <a class="row" href="tag-2026-12-07.html">
+    <span class="row-date">Mo 7. Dezember 2026</span>
+    <span class="row-title">Erntedank und Segnung der Ernte.</span>
   </a>
-  <a class="row" href="tag-2026-11-03.html">
-    <span class="row-date">Di 3. November 2026</span>
+  <a class="row" href="tag-2026-12-08.html">
+    <span class="row-date">Di 8. Dezember 2026</span>
     <span class="row-title">Andacht</span>
   </a>
-  <a class="row" href="tag-2026-11-04.html">
-    <span class="row-date">Mi 4. November 2026</span>
+  <a class="row" href="tag-2026-12-09.html">
+    <span class="row-date">Mi 9. Dezember 2026</span>
     <span class="row-title">Andacht</span>
   </a>
-  <a class="row" href="tag-2026-11-05.html">
-    <span class="row-date">Do 5. November 2026</span>
+  <a class="row" href="tag-2026-12-10.html">
+    <span class="row-date">Do 10. Dezember 2026</span>
     <span class="row-title">Andacht</span>
   </a>
-  <a class="row" href="tag-2026-11-06.html">
-    <span class="row-date">Fr 6. November 2026</span>
+  <a class="row" href="tag-2026-12-11.html">
+    <span class="row-date">Fr 11. Dezember 2026</span>
     <span class="row-title">Andacht</span>
   </a>
-  <a class="row" href="tag-2026-11-07.html">
-    <span class="row-date">Sa 7. November 2026</span>
+  <a class="row" href="tag-2026-12-12.html">
+    <span class="row-date">Sa 12. Dezember 2026</span>
     <span class="row-title">Andacht</span>
   </a>
-  <a class="row" href="tag-2026-11-08.html">
-    <span class="row-date">So 8. November 2026</span>
+  <a class="row" href="tag-2026-12-13.html">
+    <span class="row-date">So 13. Dezember 2026</span>
     <span class="row-title">2. Sonntag</span>
   </a>
-  <a class="row" href="tag-2026-11-09.html">
-    <span class="row-date">Mo 9. November 2026</span>
-    <span class="row-title">Gott der Sohn, Jesus</span>
-  </a>
-  <a class="row" href="tag-2026-11-10.html">
-    <span class="row-date">Di 10. November 2026</span>
+  <a class="row" href="tag-2026-12-14.html">
+    <span class="row-date">Mo 14. Dezember 2026</span>
     <span class="row-title">Andacht</span>
   </a>
-  <a class="row" href="tag-2026-11-11.html">
-    <span class="row-date">Mi 11. November 2026</span>
+  <a class="row" href="tag-2026-12-15.html">
+    <span class="row-date">Di 15. Dezember 2026</span>
     <span class="row-title">Andacht</span>
   </a>
-  <a class="row" href="tag-2026-11-12.html">
-    <span class="row-date">Do 12. November 2026</span>
-    <span class="row-title">Wie empfangen Gottes Kinder den Heiligen Geist?</span>
-  </a>
-  <a class="row" href="tag-2026-11-13.html">
-    <span class="row-date">Fr 13. November 2026</span>
-    <span class="row-title">Kann man den Heiligen Geist kaufen?</span>
-  </a>
-  <a class="row" href="tag-2026-11-14.html">
-    <span class="row-date">Sa 14. November 2026</span>
+  <a class="row" href="tag-2026-12-16.html">
+    <span class="row-date">Mi 16. Dezember 2026</span>
     <span class="row-title">Andacht</span>
   </a>
-  <a class="row" href="tag-2026-11-15.html">
-    <span class="row-date">So 15. November 2026</span>
+  <a class="row" href="tag-2026-12-17.html">
+    <span class="row-date">Do 17. Dezember 2026</span>
+    <span class="row-title">Weihnachten</span>
+  </a>
+  <a class="row" href="tag-2026-12-18.html">
+    <span class="row-date">Fr 18. Dezember 2026</span>
+    <span class="row-title">Andacht</span>
+  </a>
+  <a class="row" href="tag-2026-12-19.html">
+    <span class="row-date">Sa 19. Dezember 2026</span>
+    <span class="row-title">Andacht</span>
+  </a>
+  <a class="row" href="tag-2026-12-20.html">
+    <span class="row-date">So 20. Dezember 2026</span>
     <span class="row-title">3. Sonntag</span>
   </a>
-  
+
 </main>
 </body>
 </html>
