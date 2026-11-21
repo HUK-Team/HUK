@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Teaching Theme 2026/27</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500,600&family=Source+Sans+3:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --blue-deep: #1B2A4A;
+    --blue-mid: #2D4373;
+    --blue-grey: #7C8FA8;
+    --gold: #F4A93C;
+    --terracotta: #D9622B;
+    --cream: #FFF8EC;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Source Sans 3', sans-serif;
+    background: var(--cream);
+    color: var(--blue-deep);
+  }
+  .sky {
+    height: 22vh;
+    min-height: 160px;
+    background: linear-gradient(180deg, var(--blue-deep) 0%, var(--blue-mid) 45%, var(--gold) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1rem;
+  }
+  h1 {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: clamp(1.5rem, 6vw, 2.2rem);
+    color: var(--cream);
+  }
+  .subtitle {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    color: var(--cream);
+    opacity: 0.85;
+    margin-top: 0.4rem;
+  }
+  main {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 1.5rem 1.25rem 4rem;
+  }
+  
+  .topbar {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--blue-deep);
+    padding: 0.4rem 0.9rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem;
+    border-bottom: 1px solid rgba(255, 248, 236, 0.18);
+  }
+  .topbar a {
+    color: var(--cream);
+    text-decoration: none;
+    padding: 0.6rem 0.85rem;
+    border: 1px solid rgba(255, 248, 236, 0.4);
+    border-radius: 8px;
+    line-height: 1.2;
+  }
+  .topbar a.primary { background: var(--gold); border-color: var(--gold); color: var(--blue-deep); font-weight: 500; }
+  .topbar a:hover { background: rgba(255, 248, 236, 0.14); }
+  .topbar a.primary:hover { background: #fff; }
+
+  .topbar .right { display: flex; gap: 0.5rem; }
+  .topbar button {
+    font: inherit; color: var(--cream); background: transparent; cursor: pointer;
+    padding: 0.6rem 0.85rem; border: 1px solid rgba(255, 248, 236, 0.4); border-radius: 8px; line-height: 1.2;
+  }
+  .topbar button:hover { background: rgba(255, 248, 236, 0.14); }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  .jump {
+    max-width: 680px; margin: 0 auto; padding: 1rem 1.25rem 0;
+    display: flex; flex-wrap: wrap; gap: 0.5rem;
+    font-family: 'JetBrains Mono', monospace; font-size: 0.78rem;
+  }
+  .jump a {
+    color: var(--blue-deep); text-decoration: none; background: #fff; padding: 0.5rem 0.85rem;
+    border-radius: 999px; border: 1px solid #E3DDD0;
+  }
+  .jump a:hover { background: #FFF3E0; }
+  main { max-width: 680px; margin: 0 auto; padding: 0.5rem 1.25rem 4rem; }
+  section { scroll-margin-top: 4.5rem; }
+  .section-label {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--blue-grey); margin: 2.6rem 0 1rem; display: flex; align-items: center; gap: 0.6rem;
+  }
+  .section-label::after { content: ""; flex: 1; height: 1px; background: #E3DDD0; }
+  .card {
+    background: #fff; border-radius: 18px; padding: 1.6rem 1.5rem;
+    box-shadow: 0 8px 30px -10px rgba(27, 42, 74, 0.18); border-left: 4px solid var(--gold);
+  }
+  .card p { font-size: 1.125rem; line-height: 1.7; color: #2A2A2A; }
+  .card p + p { margin-top: 1rem; }
+  .satz { scroll-margin-top: 5rem; border-radius: 4px; }
+  .satz:target { background: rgba(244, 169, 60, 0.35); box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+  sup.sn {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; color: var(--terracotta); margin-right: 0.2rem; font-weight: 500;
+  }
+  .thema {
+    background: var(--blue-deep); color: var(--cream); border-radius: 18px; padding: 1.8rem 1.6rem;
+    font-family: 'Fraunces', serif; font-weight: 500; font-size: 1.3rem; line-height: 1.5;
+    border-left: 4px solid var(--gold);
+  }
+  .verse-card {
+    background: #fff; border-radius: 14px; padding: 1.3rem 1.4rem; box-shadow: 0 4px 16px -8px rgba(27, 42, 74, 0.12);
+  }
+  .verse-ref {
+    display: inline-block; font-family: 'JetBrains Mono', monospace; font-size: 0.74rem; font-weight: 500; letter-spacing: 0.04em;
+    color: #fff; background: var(--terracotta); padding: 0.25rem 0.7rem; border-radius: 6px;
+  }
+  .verse-card details { margin-top: 0.9rem; }
+  .verse-card summary {
+    cursor: pointer; font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; color: var(--blue-mid);
+    padding: 0.6rem 0; min-height: 44px; display: flex; align-items: center;
+  }
+  .verse-text { font-size: 1.05rem; line-height: 1.7; color: #2A2A2A; margin-top: 0.4rem; }
+  .verse-text sup { font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; color: var(--blue-grey); margin-right: 0.15rem; }
+  .stem { font-family: 'Fraunces', serif; font-weight: 500; font-size: 1.2rem; line-height: 1.45; margin-bottom: 1rem; }
+  ol.ziele { list-style: none; display: grid; gap: 0.75rem; }
+  .ziel {
+    display: flex; gap: 1rem; background: #fff; border-radius: 14px; padding: 1.1rem 1.2rem;
+    box-shadow: 0 4px 16px -8px rgba(27, 42, 74, 0.12); scroll-margin-top: 5rem;
+  }
+  .ziel:target { outline: 3px solid var(--gold); }
+  .verse-toggle {
+    -webkit-appearance: none; appearance: none; border: 0; margin: 0; cursor: pointer; text-align: left;
+    touch-action: manipulation; -webkit-tap-highlight-color: transparent;
+  }
+  .verse-panel { margin-top: 0.7rem; }
+  .verse-panel[hidden] { display: none; }
+  .badge {
+    flex: none; width: 2.3rem; height: 2.3rem; border-radius: 50%; background: var(--terracotta); color: #fff;
+    display: flex; align-items: center; justify-content: center; font-family: 'Fraunces', serif; font-weight: 600; font-size: 1.1rem;
+  }
+  .ziel-body p { font-size: 1.1rem; line-height: 1.6; color: #2A2A2A; margin-bottom: 0.55rem; }
+  footer {
+    text-align: center; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: var(--blue-grey); padding: 2.5rem 1rem 1.5rem;
+  }
+</style>
+</head>
+<body>
+<div class="topbar">
+  <a href="../index.html">← HTC</a>
+  <span class="right">
+    <a class="primary" href="../../jahresthema/Flyer_E.pdf" download="Teaching-Theme-2026-27.pdf">Download PDF</a>
+    <button type="button" id="share">Share</button>
+  </span>
+</div>
+
+<div class="sky">
+  <div>
+    <h1>Teaching Theme 2026/27</h1>
+    <div class="subtitle">TEACHING BACKGROUND · THEME · TEXT · OBJECTIVES</div>
+  </div>
+</div>
+
+<nav class="jump" aria-label="Sections">
+  <a href="#hintergrund">Background</a>
+  <a href="#thema">Theme</a>
+  <a href="#text">Text</a>
+  <a href="#lehrziele">Teaching Objectives</a>
+</nav>
+
+<main>
+  <section id="hintergrund">
+    <div class="section-label">Background</div>
+    <div class="card">
+      <p><span class="satz" id="satz-1"><sup class="sn">1</sup>As members in the Body of Christ and defenders of the faith, it is imperative that our hearts as God’s children be comforted during challenging times.</span> <span class="satz" id="satz-2"><sup class="sn">2</sup>We must remember that the grace and peace of God the Father are always upon us in our Lord Jesus Christ.</span></p>
+      <p><span class="satz" id="satz-3"><sup class="sn">3</sup>Being complete in Jesus Christ, we embrace His image and identity through the working of the Holy Spirit, removing all that compete with Him.</span> <span class="satz" id="satz-4"><sup class="sn">4</sup>In His identity, we grow spiritually, are strengthened in faith and continuously prepared to withstand even insurmountable challenges.</span> <span class="satz" id="satz-5"><sup class="sn">5</sup>Although deception, darkness and worldly philosophies persist, opportunities are created for us to declare our faith in the Almighty God and our fellowship with Jesus Christ, in Whom all God’s children overcome every division.</span></p>
+      <p><span class="satz" id="satz-6"><sup class="sn">6</sup>We are encouraged to continue as living testimonies, demonstrating Christ-like love, spiritual unity and godly service, by continually denying ourselves, taking up our cross daily and following Jesus.</span> <span class="satz" id="satz-7"><sup class="sn">7</sup>The likeness of Christ requires the bearing of the cross, the only place where there is union with Him, Who unto us is the wisdom, righteousness, sanctification and redemption of the Almighty God.</span></p>
+      <p><span class="satz" id="satz-8"><sup class="sn">8</sup>As Apostolics, we are required to continue living in fellowship with Jesus Christ, putting off the old man, being clothed with God’s love and peace, and allowing His Holy Spirit to guide us in everything we say and do.</span></p>
+    </div>
+  </section>
+
+  <section id="thema">
+    <div class="section-label">Theme</div>
+    <div class="thema">Matured in the fullness and supremacy of Christ, the Spirit of Truth empowers us and perfectly joins us in one mind and judgement, defining our unity in the Body of Christ, Who is the power and wisdom of God.</div>
+  </section>
+
+  <section id="text">
+    <div class="section-label">Text</div>
+    <div class="verse-card">
+      <span class="verse-ref">1 Corinthians 1:1–31</span>
+      <details>
+        <summary>Show Bible text (King James Version)</summary>
+        <div class="verse-text"><sup>1</sup>Paul, called to be an apostle of Jesus Christ through the will of God, and Sosthenes our brother, <sup>2</sup>Unto the church of God which is at Corinth, to them that are sanctified in Christ Jesus, called to be saints, with all that in every place call upon the name of Jesus Christ our Lord, both theirs and ours: <sup>3</sup>Grace be unto you, and peace, from God our Father, and from the Lord Jesus Christ. <sup>4</sup>I thank my God always on your behalf, for the grace of God which is given you by Jesus Christ; <sup>5</sup>That in every thing ye are enriched by him, in all utterance, and in all knowledge; <sup>6</sup>Even as the testimony of Christ was confirmed in you: <sup>7</sup>So that ye come behind in no gift; waiting for the coming of our Lord Jesus Christ: <sup>8</sup>Who shall also confirm you unto the end, that ye may be blameless in the day of our Lord Jesus Christ. <sup>9</sup>God is faithful, by whom ye were called unto the fellowship of his Son Jesus Christ our Lord. <sup>10</sup>Now I beseech you, brethren, by the name of our Lord Jesus Christ, that ye all speak the same thing, and that there be no divisions among you; but that ye be perfectly joined together in the same mind and in the same judgment. <sup>11</sup>For it hath been declared unto me of you, my brethren, by them which are of the house of Chloe, that there are contentions among you. <sup>12</sup>Now this I say, that every one of you saith, I am of Paul; and I of Apollos; and I of Cephas; and I of Christ. <sup>13</sup>Is Christ divided? was Paul crucified for you? or were ye baptized in the name of Paul? <sup>14</sup>I thank God that I baptized none of you, but Crispus and Gaius; <sup>15</sup>Lest any should say that I had baptized in mine own name. <sup>16</sup>And I baptized also the household of Stephanas: besides, I know not whether I baptized any other. <sup>17</sup>For Christ sent me not to baptize, but to preach the gospel: not with wisdom of words, lest the cross of Christ should be made of none effect. <sup>18</sup>For the preaching of the cross is to them that perish foolishness; but unto us which are saved it is the power of God. <sup>19</sup>For it is written, I will destroy the wisdom of the wise, and will bring to nothing the understanding of the prudent. <sup>20</sup>Where is the wise? where is the scribe? where is the disputer of this world? hath not God made foolish the wisdom of this world? <sup>21</sup>For after that in the wisdom of God the world by wisdom knew not God, it pleased God by the foolishness of preaching to save them that believe. <sup>22</sup>For the Jews require a sign, and the Greeks seek after wisdom: <sup>23</sup>But we preach Christ crucified, unto the Jews a stumblingblock, and unto the Greeks foolishness; <sup>24</sup>But unto them which are called, both Jews and Greeks, Christ the power of God, and the wisdom of God. <sup>25</sup>Because the foolishness of God is wiser than men; and the weakness of God is stronger than men. <sup>26</sup>For ye see your calling, brethren, how that not many wise men after the flesh, not many mighty, not many noble, are called:  <sup>27</sup>But God hath chosen the foolish things of the world to confound the wise; and God hath chosen the weak things of the world to confound the things which are mighty; <sup>28</sup>And base things of the world, and things which are despised, hath God chosen, yea, and things which are not, to bring to nought things that are: <sup>29</sup>That no flesh should glory in his presence. <sup>30</sup>But of him are ye in Christ Jesus, who of God is made unto us wisdom, and righteousness, and sanctification, and redemption: <sup>31</sup>That, according as it is written, He that glorieth, let him glory in the Lord.</div>
+      </details>
+    </div>
+  </section>
+
+  <section id="lehrziele">
+    <div class="section-label">Teaching Objectives</div>
+    <p class="stem">Through our unity as humble servants in the Body of Christ, we shall –</p>
+    <ol class="ziele">
+      <li class="ziel" id="ziel-a">
+        <span class="badge">A</span>
+        <div class="ziel-body"><p>live as saints, called by the will of God, sanctified, united and sustained to be blessed by the grace and peace of God in Jesus Christ</p><button type="button" class="verse-ref verse-toggle" aria-expanded="false" aria-controls="verse-a">Verses 1–3</button><div class="verse-text verse-panel" id="verse-a" hidden><sup>1</sup>Paul, called to be an apostle of Jesus Christ through the will of God, and Sosthenes our brother, <sup>2</sup>Unto the church of God which is at Corinth, to them that are sanctified in Christ Jesus, called to be saints, with all that in every place call upon the name of Jesus Christ our Lord, both theirs and ours: <sup>3</sup>Grace be unto you, and peace, from God our Father, and from the Lord Jesus Christ.</div></div>
+      </li>
+      <li class="ziel" id="ziel-b">
+        <span class="badge">B</span>
+        <div class="ziel-body"><p>be thankful, blameless, and lack nothing, being enriched by our fellowship in Him</p><button type="button" class="verse-ref verse-toggle" aria-expanded="false" aria-controls="verse-b">Verses 4–9</button><div class="verse-text verse-panel" id="verse-b" hidden><sup>4</sup>I thank my God always on your behalf, for the grace of God which is given you by Jesus Christ; <sup>5</sup>That in every thing ye are enriched by him, in all utterance, and in all knowledge; <sup>6</sup>Even as the testimony of Christ was confirmed in you: <sup>7</sup>So that ye come behind in no gift; waiting for the coming of our Lord Jesus Christ: <sup>8</sup>Who shall also confirm you unto the end, that ye may be blameless in the day of our Lord Jesus Christ. <sup>9</sup>God is faithful, by whom ye were called unto the fellowship of his Son Jesus Christ our Lord.</div></div>
+      </li>
+      <li class="ziel" id="ziel-c">
+        <span class="badge">C</span>
+        <div class="ziel-body"><p>speak from one mouth, the mind of Christ, rejecting all forms of division</p><button type="button" class="verse-ref verse-toggle" aria-expanded="false" aria-controls="verse-c">Verses 10–13</button><div class="verse-text verse-panel" id="verse-c" hidden><sup>10</sup>Now I beseech you, brethren, by the name of our Lord Jesus Christ, that ye all speak the same thing, and that there be no divisions among you; but that ye be perfectly joined together in the same mind and in the same judgment. <sup>11</sup>For it hath been declared unto me of you, my brethren, by them which are of the house of Chloe, that there are contentions among you. <sup>12</sup>Now this I say, that every one of you saith, I am of Paul; and I of Apollos; and I of Cephas; and I of Christ. <sup>13</sup>Is Christ divided? was Paul crucified for you? or were ye baptized in the name of Paul?</div></div>
+      </li>
+      <li class="ziel" id="ziel-d">
+        <span class="badge">D</span>
+        <div class="ziel-body"><p>preach the gospel of Jesus Christ as our main focus to make the cross a reality</p><button type="button" class="verse-ref verse-toggle" aria-expanded="false" aria-controls="verse-d">Verses 14–17</button><div class="verse-text verse-panel" id="verse-d" hidden><sup>14</sup>I thank God that I baptized none of you, but Crispus and Gaius; <sup>15</sup>Lest any should say that I had baptized in mine own name. <sup>16</sup>And I baptized also the household of Stephanas: besides, I know not whether I baptized any other. <sup>17</sup>For Christ sent me not to baptize, but to preach the gospel: not with wisdom of words, lest the cross of Christ should be made of none effect.</div></div>
+      </li>
+      <li class="ziel" id="ziel-e">
+        <span class="badge">E</span>
+        <div class="ziel-body"><p>trust in the preaching of the cross, for it is the power of God unto salvation for them who are saved</p><button type="button" class="verse-ref verse-toggle" aria-expanded="false" aria-controls="verse-e">Verses 18–19</button><div class="verse-text verse-panel" id="verse-e" hidden><sup>18</sup>For the preaching of the cross is to them that perish foolishness; but unto us which are saved it is the power of God. <sup>19</sup>For it is written, I will destroy the wisdom of the wise, and will bring to nothing the understanding of the prudent.</div></div>
+      </li>
+      <li class="ziel" id="ziel-f">
+        <span class="badge">F</span>
+        <div class="ziel-body"><p>declare God’s way of salvation through Christ crucified, the power and wisdom of God</p><button type="button" class="verse-ref verse-toggle" aria-expanded="false" aria-controls="verse-f">Verses 20–24</button><div class="verse-text verse-panel" id="verse-f" hidden><sup>20</sup>Where is the wise? where is the scribe? where is the disputer of this world? hath not God made foolish the wisdom of this world? <sup>21</sup>For after that in the wisdom of God the world by wisdom knew not God, it pleased God by the foolishness of preaching to save them that believe. <sup>22</sup>For the Jews require a sign, and the Greeks seek after wisdom: <sup>23</sup>But we preach Christ crucified, unto the Jews a stumblingblock, and unto the Greeks foolishness; <sup>24</sup>But unto them which are called, both Jews and Greeks, Christ the power of God, and the wisdom of God.</div></div>
+      </li>
+      <li class="ziel" id="ziel-g">
+        <span class="badge">G</span>
+        <div class="ziel-body"><p>embrace the Wisdom of God, Who deliberately chooses the humble to shame the wise so that no flesh should glory in His presence</p><button type="button" class="verse-ref verse-toggle" aria-expanded="false" aria-controls="verse-g">Verses 25–29</button><div class="verse-text verse-panel" id="verse-g" hidden><sup>25</sup>Because the foolishness of God is wiser than men; and the weakness of God is stronger than men. <sup>26</sup>For ye see your calling, brethren, how that not many wise men after the flesh, not many mighty, not many noble, are called:  <sup>27</sup>But God hath chosen the foolish things of the world to confound the wise; and God hath chosen the weak things of the world to confound the things which are mighty; <sup>28</sup>And base things of the world, and things which are despised, hath God chosen, yea, and things which are not, to bring to nought things that are: <sup>29</sup>That no flesh should glory in his presence.</div></div>
+      </li>
+      <li class="ziel" id="ziel-h">
+        <span class="badge">H</span>
+        <div class="ziel-body"><p>glorify God the Father in His Son, Jesus Christ, Who is for us wisdom, righteousness, sanctification, and redemption through our union with Him</p><button type="button" class="verse-ref verse-toggle" aria-expanded="false" aria-controls="verse-h">Verses 30–31</button><div class="verse-text verse-panel" id="verse-h" hidden><sup>30</sup>But of him are ye in Christ Jesus, who of God is made unto us wisdom, and righteousness, and sanctification, and redemption: <sup>31</sup>That, according as it is written, He that glorieth, let him glory in the Lord.</div></div>
+      </li>
+    </ol>
+  </section>
+
+  <footer>Teaching Background, Theme, Text and Objectives 2026/27 · Home Tuition Calendar</footer>
+</main>
+
+<script>
+  document.addEventListener('click', function (e) {
+    var btn = e.target.closest ? e.target.closest('.verse-toggle') : null;
+    if (!btn) return;
+    var panel = document.getElementById(btn.getAttribute('aria-controls'));
+    var open = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', open ? 'false' : 'true');
+    if (open) { panel.setAttribute('hidden', ''); } else { panel.removeAttribute('hidden'); }
+  });
+  document.getElementById('share').addEventListener('click', async function () {
+    var url = location.href.split('#')[0];
+    var btn = this;
+    if (navigator.share) {
+      try { await navigator.share({ title: 'Teaching Theme 2026/27', text: 'Teaching Background, Theme, Text and Objectives 2026/27', url: url }); } catch (e) {}
+      return;
+    }
+    try {
+      await navigator.clipboard.writeText(url);
+      btn.textContent = 'Link copied';
+      setTimeout(function () { btn.textContent = 'Share'; }, 2500);
+    } catch (e) {
+      window.prompt('Copy link:', url);
+    }
+  });
+</script>
+</body>
+</html>
