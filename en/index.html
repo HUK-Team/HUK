@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home Tuition Calendar — Overview</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500,600&family=Source+Sans+3:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --blue-deep: #1B2A4A;
+    --blue-mid: #2D4373;
+    --blue-grey: #7C8FA8;
+    --gold: #F4A93C;
+    --terracotta: #D9622B;
+    --cream: #FFF8EC;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Source Sans 3', sans-serif;
+    background: var(--cream);
+    color: var(--blue-deep);
+  }
+  .sky {
+    height: 22vh;
+    min-height: 160px;
+    background: linear-gradient(180deg, var(--blue-deep) 0%, var(--blue-mid) 45%, var(--gold) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1rem;
+  }
+  h1 {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: clamp(1.5rem, 6vw, 2.2rem);
+    color: var(--cream);
+  }
+  .subtitle {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    color: var(--cream);
+    opacity: 0.85;
+    margin-top: 0.4rem;
+  }
+  main {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 1.5rem 1.25rem 4rem;
+  }
+  .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    background: #fff;
+    border-radius: 12px;
+    padding: 0.9rem 1.1rem;
+    margin-bottom: 0.6rem;
+    text-decoration: none;
+    color: var(--blue-deep);
+    box-shadow: 0 3px 12px -6px rgba(27, 42, 74, 0.12);
+  }
+  .row:hover { background: #FFF3E0; }
+  .row-date {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem;
+    color: var(--terracotta);
+    flex-shrink: 0;
+  }
+  .row-title {
+    font-size: 0.92rem;
+    text-align: right;
+    color: #2A2A2A;
+  }
+
+  .topbar {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--blue-deep);
+    padding: 0.4rem 0.9rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem;
+    border-bottom: 1px solid rgba(255, 248, 236, 0.18);
+  }
+  .topbar a {
+    color: var(--cream);
+    text-decoration: none;
+    padding: 0.6rem 0.85rem;
+    border: 1px solid rgba(255, 248, 236, 0.4);
+    border-radius: 8px;
+    line-height: 1.2;
+  }
+  .topbar a.primary { background: var(--gold); border-color: var(--gold); color: var(--blue-deep); font-weight: 500; }
+  .topbar a:hover { background: rgba(255, 248, 236, 0.14); }
+  .topbar a.primary:hover { background: #fff; }
+  .devotion-text strong { font-weight: 600; color: var(--blue-deep); }
+  .refs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1.2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #E3DDD0;
+  }
+  .ref-chip {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem;
+    padding: 0.5rem 0.85rem;
+    border-radius: 999px;
+    border: 1px solid var(--blue-grey);
+    color: var(--blue-deep);
+    background: var(--cream);
+    text-decoration: none;
+    line-height: 1.2;
+  }
+  a.ref-chip { border-color: var(--terracotta); }
+  a.ref-chip:hover { background: #fff; }
+</style>
+</head>
+<body>
+<div class="topbar">
+  <a class="primary" href="jahresthema/index.html">Teaching Theme 2026/27 →</a>
+  <a href="../jahresthema/Flyer_E.pdf">PDF</a>
+</div>
+<div class="sky">
+  <div>
+    <h1>God, the Holy Spirit</h1>
+    <div class="subtitle">HOME TUITION CALENDAR · NOVEMBER – DECEMBER 2026</div>
+  </div>
+</div>
+<main>
+  <a class="row" href="tag-2026-11-16.html">
+    <span class="row-date">Mon 16 November 2026</span>
+    <span class="row-title">Question 19, part 2: What does the Holy scriptures reveal about Jesus Christ the only begotten of God.</span>
+  </a>
+  <a class="row" href="tag-2026-11-17.html">
+    <span class="row-date">Tue 17 November 2026</span>
+    <span class="row-title">Devotion</span>
+  </a>
+  <a class="row" href="tag-2026-11-18.html">
+    <span class="row-date">Wed 18 November 2026</span>
+    <span class="row-title">The only begotten of God is described in scripture as the revelation in flesh.</span>
+  </a>
+  <a class="row" href="tag-2026-11-19.html">
+    <span class="row-date">Thu 19 November 2026</span>
+    <span class="row-title">Devotion</span>
+  </a>
+  <a class="row" href="tag-2026-11-20.html">
+    <span class="row-date">Fri 20 November 2026</span>
+    <span class="row-title">Question 20: What does the Holy scripture say about Jesus Christ as the Lord. Jesus</span>
+  </a>
+  <a class="row" href="tag-2026-11-21.html">
+    <span class="row-date">Sat 21 November 2026</span>
+    <span class="row-title">Devotion</span>
+  </a>
+  <a class="row" href="tag-2026-11-22.html">
+    <span class="row-date">Sun 22 November 2026</span>
+    <span class="row-title">4th Sunday</span>
+  </a>
+  <a class="row" href="tag-2026-11-23.html">
+    <span class="row-date">Mon 23 November 2026</span>
+    <span class="row-title">Devotion</span>
+  </a>
+  <a class="row" href="tag-2026-11-24.html">
+    <span class="row-date">Tue 24 November 2026</span>
+    <span class="row-title">Devotion</span>
+  </a>
+  <a class="row" href="tag-2026-11-25.html">
+    <span class="row-date">Wed 25 November 2026</span>
+    <span class="row-title">Devotion</span>
+  </a>
+  <a class="row" href="tag-2026-11-26.html">
+    <span class="row-date">Thu 26 November 2026</span>
+    <span class="row-title">Unto the church of God which is at Corinth, to them that are sanctified in Christ Jesus…</span>
+  </a>
+  <a class="row" href="tag-2026-11-27.html">
+    <span class="row-date">Fri 27 November 2026</span>
+    <span class="row-title">Grace be unto you and peace from God our Father and from the Lord Jesus Christ…</span>
+  </a>
+  <a class="row" href="tag-2026-11-28.html">
+    <span class="row-date">Sat 28 November 2026</span>
+    <span class="row-title">Being complete in Jesus Christ, we embrace the image and identity through the working of the Holy Spirit, removing all that compete with Him.</span>
+  </a>
+  <a class="row" href="tag-2026-11-29.html">
+    <span class="row-date">Sun 29 November 2026</span>
+    <span class="row-title">5th Sunday</span>
+  </a>
+  <a class="row" href="tag-2026-11-30.html">
+    <span class="row-date">Mon 30 November 2026</span>
+    <span class="row-title">Devotion</span>
+  </a>
+  <a class="row" href="tag-2026-12-01.html">
+    <span class="row-date">Tue 1 December 2026</span>
+    <span class="row-title">Devotion</span>
+  </a>
+  <a class="row" href="tag-2026-12-02.html">
+    <span class="row-date">Wed 2 December 2026</span>
+    <span class="row-title">Through our unity as humble servants of the Body of Christ, we shall: Live as Saints called by the will of God, sanctified, united and sustained to be blessed by the grace and peace of God in Jesus Christ.</span>
+  </a>
+  <a class="row" href="tag-2026-12-03.html">
+    <span class="row-date">Thu 3 December 2026</span>
+    <span class="row-title">Devotion</span>
+  </a>
+  <a class="row" href="tag-2026-12-04.html">
+    <span class="row-date">Fri 4 December 2026</span>
+    <span class="row-title">Thanksgiving and blessing of the harvest.</span>
+  </a>
+  <a class="row" href="tag-2026-12-05.html">
+    <span class="row-date">Sat 5 December 2026</span>
+    <span class="row-title">Thanksgiving and blessing of the harvest.</span>
+  </a>
+  <a class="row" href="tag-2026-12-06.html">
+    <span class="row-date">Sun 6 December 2026</span>
+    <span class="row-title">1st Sunday</span>
+  </a>
+  <a class="row" href="tag-2026-12-07.html">
+    <span class="row-date">Mon 7 December 2026</span>
+    <span class="row-title">Thanksgiving and Blessing of the Harvest.</span>
+  </a>
+  <a class="row" href="tag-2026-12-08.html">
+    <span class="row-date">Tue 8 December 2026</span>
+    <span class="row-title">Devotion</span>
+  </a>
+  <a class="row" href="tag-2026-12-09.html">
+    <span class="row-date">Wed 9 December 2026</span>
+    <span class="row-title">Devotion</span>
+  </a>
+  <a class="row" href="tag-2026-12-10.html">
+    <span class="row-date">Thu 10 December 2026</span>
+    <span class="row-title">Devotion</span>
+  </a>
+  <a class="row" href="tag-2026-12-11.html">
+    <span class="row-date">Fri 11 December 2026</span>
+    <span class="row-title">Devotion</span>
+  </a>
+  <a class="row" href="tag-2026-12-12.html">
+    <span class="row-date">Sat 12 December 2026</span>
+    <span class="row-title">Devotion</span>
+  </a>
+  <a class="row" href="tag-2026-12-13.html">
+    <span class="row-date">Sun 13 December 2026</span>
+    <span class="row-title">2nd Sunday</span>
+  </a>
+  <a class="row" href="tag-2026-12-14.html">
+    <span class="row-date">Mon 14 December 2026</span>
+    <span class="row-title">Devotion</span>
+  </a>
+  <a class="row" href="tag-2026-12-15.html">
+    <span class="row-date">Tue 15 December 2026</span>
+    <span class="row-title">Devotion</span>
+  </a>
+  <a class="row" href="tag-2026-12-16.html">
+    <span class="row-date">Wed 16 December 2026</span>
+    <span class="row-title">Devotion</span>
+  </a>
+  <a class="row" href="tag-2026-12-17.html">
+    <span class="row-date">Thu 17 December 2026</span>
+    <span class="row-title">Christmas</span>
+  </a>
+  <a class="row" href="tag-2026-12-18.html">
+    <span class="row-date">Fri 18 December 2026</span>
+    <span class="row-title">Devotion</span>
+  </a>
+  <a class="row" href="tag-2026-12-19.html">
+    <span class="row-date">Sat 19 December 2026</span>
+    <span class="row-title">Devotion</span>
+  </a>
+  <a class="row" href="tag-2026-12-20.html">
+    <span class="row-date">Sun 20 December 2026</span>
+    <span class="row-title">3rd Sunday</span>
+  </a>
+
+</main>
+</body>
+</html>
